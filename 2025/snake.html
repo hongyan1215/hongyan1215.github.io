@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貪食蛇遊戲</title>
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="score-container">
+                <div class="score">分數: <span id="score">0</span></div>
+                <div class="title">稱號: <span id="title">新手</span></div>
+            </div>
+            <div class="high-score-container">
+                <div class="high-score">最高分: <span id="high-score">0</span></div>
+                <div class="high-score-title">最高稱號: <span id="high-score-title">新手</span></div>
+            </div>
+            <div class="coin-container">
+                <div class="coins">金幣: <span id="coins">0</span></div>
+                <div class="coin-rate">金幣倍率: <span id="coin-rate">1</span>x</div>
+            </div>
+        </div>
+        <div class="game-area">
+            <div class="game-status">
+                <div class="speed-status" id="speed-status"></div>
+            </div>
+            <canvas id="game-canvas"></canvas>
+        </div>
+        <div class="game-controls">
+            <button id="start-btn">開始遊戲</button>
+            <button id="pause-btn">暫停</button>
+            <button id="upgrade-btn">升級</button>
+        </div>
+        <div class="game-over" id="game-over">
+            <h2>遊戲結束</h2>
+            <p>最終分數: <span id="final-score">0</span></p>
+            <p>最終稱號: <span id="final-title">新手</span></p>
+            <p>獲得金幣: <span id="earned-coins">0</span></p>
+            <div class="game-over-buttons">
+                <button id="restart-btn">再玩一次</button>
+                <button id="upgrade-after-game">升級</button>
+            </div>
+        </div>
+        <div class="upgrade-screen" id="upgrade-screen">
+            <h2>升級商店</h2>
+            <div class="upgrade-coin-display">
+                <span>當前金幣: <span id="upgrade-screen-coins">0</span></span>
+            </div>
+            <div class="upgrade-section">
+                <h3>金幣轉換率</h3>
+                <div class="upgrade-item">
+                    <span>當前倍率: <span id="current-coin-rate">1</span>x</span>
+                    <span>升級後: <span id="next-coin-rate">2</span>x</span>
+                    <button id="upgrade-coin-rate">升級 (500金幣)</button>
+                </div>
+            </div>
+            <div class="upgrade-section">
+                <h3>食物升級</h3>
+                <div class="food-info">
+                    <div class="food-type">
+                        <span class="food-color" style="background-color: #ff6b6b;"></span>
+                        <span>紅色食物：</span>
+                        <span id="normal-food-points">10</span>分
+                        <span id="normal-food-chance">60%</span>
+                    </div>
+                    <div class="food-type">
+                        <span class="food-color" style="background-color: #ffd166;"></span>
+                        <span>黃色食物：</span>
+                        <span id="fast-food-points">25</span>分
+                        <span id="fast-food-chance">15%</span>
+                    </div>
+                    <div class="food-type">
+                        <span class="food-color" style="background-color: #06d6a0;"></span>
+                        <span>綠色食物：</span>
+                        <span id="slow-food-points">20</span>分
+                        <span id="slow-food-chance">15%</span>
+                    </div>
+                    <div class="food-type">
+                        <span class="food-color" style="background-color: #118ab2;"></span>
+                        <span>藍色食物：</span>
+                        <span id="bonus-food-points">25</span>分
+                        <span id="bonus-food-chance">10%</span>
+                    </div>
+                </div>
+                <div class="upgrade-buttons">
+                    <button id="upgrade-food">升級食物 (30金幣)</button>
+                    <button id="upgrade-food-multi">升級食物 x5 (150金幣)</button>
+                </div>
+            </div>
+            <div class="upgrade-section">
+                <button id="reroll-chances">重新抽取機率 (200金幣)</button>
+            </div>
+            <button id="close-upgrade">關閉</button>
+        </div>
+    </div>
+    <script src="snake.js"></script>
+</body>
+</html> 
